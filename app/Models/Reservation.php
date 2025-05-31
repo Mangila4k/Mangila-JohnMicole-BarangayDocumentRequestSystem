@@ -2,17 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FileDocument extends Model
+class Reservation extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'status',
+        'approved_at',
+        // other fields...
+    ];
 
-    protected $fillable = ['type', 'description'];
-
-    public function reservations()
-    {
-        return $this->hasMany(Reservation::class);
-    }
+    protected $dates = [
+        'approved_at',
+    ];
 }
+    
